@@ -21,7 +21,10 @@
     <ClCompile Include="src\Screen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Draw.cpp">
+    <ClCompile Include="src\Colors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Shapes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +32,10 @@
     <ClInclude Include="src\Screen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Draw.h">
+    <ClInclude Include="src\Colors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Shapes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

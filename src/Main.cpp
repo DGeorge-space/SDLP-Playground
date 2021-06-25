@@ -1,73 +1,61 @@
 #include <iostream>
+#include <stdio.h>
 #include <time.h>
 #include <cstring>
 #include <SDL.h>
+#include <vector>
 #include "Screen.h"
+#include "Shapes.h"
 
-#include "Draw.h"
 
 using namespace std;
-
-
-const int ScreenWidth = 600;
-const int halfScreenWidth = ScreenWidth / 2;
-const int ScreenHeight = 800;
-
 
 
 int main(int argc, char* argv[])
 {
 	srand(time(NULL));
 
+
+	// The screen object initialises the window, renderer, texture and buffers 1 & 2 as Null 
 	Screen screen;
-	Draw circle;
-	Draw square;
-	Draw square2;
+	Circle circle(50);
+
+
+	
+	//screen.init() sets the m_window object, with a name for the window, X & Y position [set to Undefined currently], and screen height and size:
+		// a possible optimisation here is to overload the init function with options for position, window width, height and name. 
+		// Further, might be better to split the init function into several for usability and improved experience. 
+
 	if (screen.init() == false) {
-		cout << "Error initialising SDL" << endl;
+
+	//if the function fails output a message to the console, may be better to do this using printf: 
+		//cout << "Error initialising SDL" << endl;
+		printf("Error initialising SDL, SDL Error: %s\n", SDL_GetError() );
 	}
+
+	//This is the main 'game loop' where the magic happens
 	while (true) {
-		//update particles
-		//draw particles
-		int elapsed = SDL_GetTicks();
-
-		unsigned char green = (1 + sin(elapsed * 0.0005)) * 128;
-		unsigned char red = (1 + cos(elapsed * 0.005)) * 128;
-		unsigned char blue = (1 + sin(elapsed * 0.0007)) * 128;
-
-		int x = ScreenWidth/2;
-		int y = ScreenHeight/2;
-
-		int theta = 0;
-
-		int radius = 1000;
 
 
-		while (radius>1)
-		{
-			circle.circle(x, y, radius);
-			radius-=10;
-		}
-
-		square.rect(0, 0);
-		square2.rect(ScreenWidth, ScreenHeight);
-
-		///added a comment to test
-
-
-		square.output(screen,20, 20, 20);
-		circle.output(screen);
 		
-
-
-		screen.boxBlur();
-
+		circle.draw();
+		
+		/* At the end of the loop the update function will update the texture from the data in the buffer, clear the renderer,
+		* update the renderer with the updated texture and then present the renderer on to the window
+		*/ 
 		screen.update();
 
+		/*
+		A little box blur function that averages the colour RGB for a given pixel with its 9 near neighbours - 
+			possible optimisation: 
+				- only blur pixels that are not the same as the bakground colour
+		*/
+		screen.boxBlur();
 
-		
+
+		//All Events handling goes on in screen. processEevents() 
 		if (screen.processEvents() == false) {
-			break;
+			break; // exit the program 
 		}
 	}
 

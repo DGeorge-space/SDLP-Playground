@@ -22,6 +22,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{C99698BC-6681-4130-B1CC-B41C8F634774}</ProjectGuid>
     <RootNamespace>Project1</RootNamespace>
+    <ProjectName>SDLPlayground</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -139,12 +140,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Draw.cpp" />
+    <ClCompile Include="src\Shapes.cpp" />
+    <ClCompile Include="src\Colors.cpp" />
     <ClCompile Include="src\Screen.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Draw.h" />
+    <ClInclude Include="src\Shapes.h" />
+    <ClInclude Include="src\Colors.h" />
     <ClInclude Include="src\Screen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
