@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #include <iostream>
 #include <time.h>
 #include <cstring>
@@ -5,6 +6,9 @@
 #include "Screen.h"
 
 #include "Draw.h"
+=======
+#include "App.h"
+>>>>>>> Stashed changes
 
 using namespace std;
 
@@ -17,6 +21,7 @@ const int ScreenHeight = 800;
 
 int main(int argc, char* argv[])
 {
+<<<<<<< Updated upstream
 	srand(time(NULL));
 
 	Screen screen;
@@ -70,8 +75,14 @@ int main(int argc, char* argv[])
 			break;
 		}
 	}
+=======
+	App app;	
+	
+	app.Run();
+>>>>>>> Stashed changes
 
+	
+	
 
-	screen.close();
 	return 0;
 }

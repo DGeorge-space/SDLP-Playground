@@ -139,12 +139,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <ClCompile Include="src\Draw.cpp" />
+=======
+    <ClCompile Include="src\DFT.cpp" />
+    <ClCompile Include="src\Spectrograph.cpp" />
+    <ClCompile Include="src\Rect.cpp" />
+    <ClCompile Include="src\App.cpp" />
+    <ClCompile Include="src\Circle.cpp" />
+    <ClCompile Include="src\Shapes.cpp" />
+    <ClCompile Include="src\Colors.cpp" />
+>>>>>>> Stashed changes
     <ClCompile Include="src\Screen.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <ClInclude Include="src\Draw.h" />
+=======
+    <ClInclude Include="src\DFT.h" />
+    <ClInclude Include="src\Spectrograph.h" />
+    <ClInclude Include="src\Rect.h" />
+    <ClInclude Include="src\App.h" />
+    <ClInclude Include="src\Circle.h" />
+    <ClInclude Include="src\Shapes.h" />
+    <ClInclude Include="src\Colors.h" />
+>>>>>>> Stashed changes
     <ClInclude Include="src\Screen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -14,8 +14,8 @@ bool Screen::init() {
 	m_window = SDL_CreateWindow("An SDL2 window",                // window title
 		SDL_WINDOWPOS_UNDEFINED,           // initial x position
 		SDL_WINDOWPOS_UNDEFINED,           // initial y position
-		ScreenHeight,                               // width, in pixels
-		ScreenWidth,                               // height, in pixels
+		ScreenWidth,                               // width, in pixels
+		ScreenHeight,                               // height, in pixels
 		SDL_WINDOW_SHOWN                  // flags - see below
 	);
 
