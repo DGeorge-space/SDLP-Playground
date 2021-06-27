@@ -14,8 +14,8 @@ bool Screen::init() {
 	m_window = SDL_CreateWindow("An SDL2 window",                // window title
 		SDL_WINDOWPOS_UNDEFINED,           // initial x position
 		SDL_WINDOWPOS_UNDEFINED,           // initial y position
-		ScreenHeight,                               // width, in pixels
-		ScreenWidth,                               // height, in pixels
+		ScreenWidth,                               // width, in pixels
+		ScreenHeight,                               // height, in pixels
 		SDL_WINDOW_SHOWN                  // flags - see below
 	);
 
@@ -54,31 +54,9 @@ bool Screen::init() {
 
 
 void Screen::update() {
-
-	/*https://wiki.libsdl.org/SDL_UpdateTexture parameters:
-	- The texture to update
-	- The SDL_RECT - in this case set to NULL to mean the whole texture
-	- raw pixel data (Buffer - our list of lixels)
-	- Pitch - number of bytes in a row of pixel data (can this be set as constant?) 	
-	*/
 	SDL_UpdateTexture(m_texture, NULL, m_buffer1, ScreenWidth * sizeof(Uint32));
-
-
-	/*
-	https://wiki.libsdl.org/SDL_RenderClear
-	Clears the renderer
-	*/
 	SDL_RenderClear(m_renderer);
-
-	/*
-	https://wiki.libsdl.org/SDL_RenderCopy
-	copies the texture to the renderer, either a portion (If the RECTS are set from NULLL) or the whole texture
-	*/
 	SDL_RenderCopy(m_renderer, m_texture, NULL, NULL);
-
-	/* Updates the renderer
-	* https://wiki.libsdl.org/SDL_RenderPresent
-	*/
 	SDL_RenderPresent(m_renderer);
 }
 void Screen::setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue) {

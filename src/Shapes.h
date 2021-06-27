@@ -4,6 +4,7 @@
 #include "Screen.h"
 #include <vector>
 
+
 using namespace std;
 
 //============= SHAPES CLASS ===========================
@@ -22,7 +23,8 @@ private:
 	Uint8 G=0;
 	Uint8 B=0;
 
-	 
+protected: 
+
 	int Xpos; 
 	int Ypos; 
 	int size=100;
@@ -55,47 +57,7 @@ public:
 	~Shapes();
 };
 
-// ============Shapes Methods
 
 
-
-
-// Circle Class
-
-class Circle : public Shapes
-{
-public:
-	Circle();
-	Circle(int Radius);
-	void setRadius(int radius);
-	void draw();
-	
-
-private:
-	int radius;
-
-};
-
-
-
-// Rectangle Class
-
-class Rect:public Shapes
-{
-private:
-	int sizey;
-public:
-	Rect();
-	Rect(int size);
-	void setSizey(int sizey);
-	Rect(int sizex, int sizey);
-	
-	void draw();
-
-	~Rect();
-
-	
-
-};
 
 

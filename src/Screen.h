@@ -5,8 +5,9 @@
 class Screen
 {
 public:
+	const static int ScreenWidth = 1000;
 	const static int ScreenHeight = 800;
-	const static int ScreenWidth = 600;
+	
 private:
 	SDL_Window* m_window;
 	SDL_Renderer* m_renderer;
